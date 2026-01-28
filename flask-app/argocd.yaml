@@ -8,10 +8,9 @@ spec:
   source:
     repoURL: https://github.com/Ghani9898/flask-app-argo.git
     targetRevision: HEAD
-    path: .
-    helm:
-      valueFiles:
-        - values.yaml
+    path: .                 # folder containing your YAML manifests
+    directory:
+      recurse: true         # process all YAML files
   destination:
     server: https://kubernetes.default.svc
     namespace: default
